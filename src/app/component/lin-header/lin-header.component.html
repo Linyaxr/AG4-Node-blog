@@ -1,0 +1,35 @@
+<div class="linHeader">
+
+  <div class="headerMain">
+    <header id="header">
+      <h1 (click)="linkIndex()" style="font-size:1.2rem;"><a>LInya个人博客</a></h1>
+      <nav class="links">
+        <ul>
+          <li><a (click)="linkIndex()">首页</a></li>
+          <li><a (click)="linkArticle()">文章</a></li>
+          <li><a (click)="linkAbout()">关于我</a></li>
+        </ul>
+      </nav>
+      <nav class="main">
+        <ul>
+          <li class="menu linMenu" *ngIf="hideState">
+            <span (click)="linkLogin()">登录</span>
+            <span (click)="linkRegister()">注册</span>
+          </li>
+          <li class="menu linMenu" *ngIf ="showState" (click)="showPanel()">
+            <span>欢迎你 <b ngDefaultControl>{{userName}}</b></span>
+
+          </li>
+          
+        </ul>
+        <div class="optPanel" *ngIf="panelState">
+          <ul>
+            <li style="padding:0px 20px;cursor:pointer;" (click)="loginOut()">登出</li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+  </div>
+
+</div>

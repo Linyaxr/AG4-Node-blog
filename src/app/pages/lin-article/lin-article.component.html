@@ -1,0 +1,63 @@
+<app-lin-header></app-lin-header>
+
+<div id="main" style="">
+
+  <!-- Post -->
+  <article class="post" style="margin: 100px auto 3em;width:65%;">
+    <header>
+      <div class="title" style="width:65%;">
+        <h2><a [innerHTML]="ArticleTitle"></a></h2>
+        <p [innerHTML]="ArticleDescribe" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></p>
+      </div>
+      <div class="meta">
+        <time class="published" datetime="2015-11-01">November 1, 2015</time>
+        <a class="author"><span class="name" [innerHTML]="ArticleAuthor"></span><img src="assets/logo.jpg" alt="" /></a>
+        <div>
+          <ul class="stats" style="margin:0px;padding:0px;">
+            <li style="display:inline-block;"><a class="iconfont icon-good" (click)="addDz()" [innerHTML]="ArticleDz"></a></li>
+            <li style="display:inline-block;"><a class="iconfont icon-comments" [innerHTML]="CommentCount"></a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="ql-bubble">
+      <div class="ql-editor" [innerHTML]="ArticleContent"></div>
+    </div>
+  </article>
+
+
+  <div class="ArticlePl">
+    
+    <div class="userPl">
+      <span *ngIf="plState">登录后才可评论！</span>
+      <div *ngIf="cmState">
+        <span [innerHTML]="UserName"></span>
+        <textarea placeholder="写下你的评论" [(ngModel)]="UserComment"></textarea>
+        <button type="button" nglButton="success" (click)="addPl()">提交</button>
+      </div>
+    </div>
+
+    <div class="plList">
+
+      <div>
+        <p class="commentCount"><span [innerHTML]="CommentCount"></span> 条评论</p>
+      </div>
+
+      <ul>
+        <li *ngFor="let com of CommentArr">
+          <div class="commentBox">
+            <p class="commentName">{{com.name}}</p>
+            <span class="commentTime"> {{com.createTime}}</span>
+            <p class="commentContent">{{com.content}}</p>
+            <!--<span (click)="commentHUIFU()" class="iconfont icon-comments commentHf"> 回复</span>
+            <textarea placeholder="写下你的评论"></textarea-->
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>
+
+<app-lin-footer></app-lin-footer>

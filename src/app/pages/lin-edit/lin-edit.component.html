@@ -1,0 +1,63 @@
+ <div class="editHead">
+  <div class="HeadLeft">
+
+    <div class="headBack">
+      <span (click)="backIndex()"><i class="iconfont icon-back"></i> 返回首页</span>
+    </div>
+
+    <div class="headCreate">
+      <span class="createBox" (click)="addFolder()"><i class="iconfont icon-add"></i> 新建文集</span>
+    </div>
+
+    <div class="creatFileName" *ngIf="createState">
+      <div class="creatInput">
+        <input type="text" placeholder="请输入文集名" [(ngModel)]="folderName" />
+      </div>
+      <div class="creatOpts">
+        <span (click)="createFolder()">创建</span>
+        <span (click)="cancelFolder()">取消</span>
+      </div>
+    </div>
+
+    <div class="fileBox">
+      <span *ngIf="filShow">开启您的创作吧！</span>
+      <ul *ngIf="filHide">
+        <li *ngFor="let fol of folderArr;let i = index;" [ngClass]="{'linActives': ste==i}" (click)="selectFolder(fol,i)">{{fol.name}}</li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="HeadRight">
+    <div class="creatFiles" *ngIf="createStates">
+      <span (click)="createArticle()"><i class="iconfont icon-add"></i> 新建文章</span>
+    </div>
+
+    <div class="filesBox">
+      <span *ngIf="fileSte" style="display:block;margin:20px 22px;">文集里还没有文章</span>
+      <ul *ngIf="fileEts">
+        <li *ngFor="let art of articleArrs" (click)="writeArt(art)" >
+          <h1>{{art.title}}</h1>
+          <span *ngIf="zsState">字数：<span [(innerHTML)]="ArticleNum"></span> </span>
+          <span class="iconfont icon-set filesSet"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="editCont" *ngIf="editContStates">
+  <div class="contTitle"> 
+    <input type="text" placeholder="请输入标题" [(ngModel)]="ArticleTitle"/>
+    <div class="optsBox">
+      <span (click)="saveArticle()">保存</span>
+      <span (click)="releaseArticle()">发布</span>
+    </div>
+    <textarea placeholder="请输入该文章的简短描述" [(ngModel)]="ArticleDesctibe" style="padding:20px;background:#eee;"></textarea>
+  </div>
+
+  <div class="contEdits">
+    <quill-editor [(ngModel)]="editContents" [style]="{height:'89%'}" placeholder="请输入文章" (onEditorCreated)="setFocus($event)" (onContentChanged)="textNow($event)" (onSelectionChanged)="selecText($event)"></quill-editor>
+  </div>
+
+</div>
+

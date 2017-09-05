@@ -1,0 +1,57 @@
+.ArticlePl {
+  width: 65%;
+  height: auto;
+  padding: 20px;
+  margin: 0px auto;
+  background: #fff;
+
+  .userPl {
+    span {
+      display: inline-block;
+      margin: 10px 0px;
+    }
+
+    textarea {
+      margin: 10px 0px;
+      display: inline-block;
+    }
+  }
+
+  .plList {
+    width: 100%;
+    height: auto;
+    padding: 10px 0px;
+
+    li {
+      border-bottom: 1px solid #ccc;
+      margin: 20px 0px;
+      padding: 20px 0px;
+    }
+
+    .commentCount {
+      border-bottom: 1px solid #ccc;
+      padding: 20px 0px;
+    }
+
+    .commentBox {
+      width: 100%;
+      height: auto;
+
+      p {
+        margin: 0px 0px;
+      }
+
+      .commentHf{display:inline-block;margin:20px 0px 0px;}
+      .commentTime {
+        color: #808080;
+        font-size: .8rem;
+      }
+
+      .commentContent {
+        width: 100%;
+        word-wrap: break-word;
+        word-break: normal;
+      }
+    }
+  }
+}

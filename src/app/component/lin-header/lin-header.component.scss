@@ -1,0 +1,11 @@
+.linMenu{
+  span{padding:0px 20px;}
+  span:first-child{border-right:1px solid #ccc;}
+}
+#header .links ul li a{font-size:.9rem;}
+
+.optPanel{position:absolute;right:0px;background:#fff;z-index:9999;top:56px;
+          ul{width:100%;height:auto;
+             li{padding:10px;}
+          }
+}

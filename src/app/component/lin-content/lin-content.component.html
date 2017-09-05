@@ -1,0 +1,30 @@
+<div id="main">
+
+  <article class="post" *ngFor="let art of ArticleArrs" (click)="linkDetail(art)">
+    <header>
+      <div class="title" style="width:65%;">
+        <h2 style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;"><a>{{art.title}}</a></h2>
+      </div>
+      <div class="meta">
+        <time class="published" datetime="2015-11-01">November 1, 2015</time>
+        <a class="author"><span class="name">作者：{{art.author}}</span><img src="assets/logo.jpg" alt="" /></a>
+      </div>
+    </header>
+    
+    <p class="ckeditHtml" style="word-wrap:break-word;">{{art.describe}}</p>
+    <footer>
+      <ul class="actions">
+        <li><a class="button big">阅读更多</a></li>
+      </ul>
+      <ul class="stats">
+        <li><a class="iconfont icon-good">{{art.dz}}</a></li>
+      </ul>
+    </footer>
+  </article>
+
+  <ul class="actions pagination">
+    <li><a href="" class="disabled button big previous">Previous Page</a></li>
+    <li><a href="#" class="button big next">Next Page</a></li>
+  </ul>
+
+</div>

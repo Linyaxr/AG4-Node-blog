@@ -1,0 +1,82 @@
+.listBox {
+  width: 90%;
+  height: auto;
+  margin: 40px auto;
+  position: relative;
+
+  h1 {
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+  }
+
+  .listLeft {
+    position: absolute;
+    left: 0px;
+  }
+
+  .listRight {
+    position: absolute;
+    right: 0px;
+    width: 70%;
+    background: #fff;
+
+    .articleBoxList {
+      width: 100%;
+      height: auto;
+      padding: 0px 0px;
+
+      ul {
+        width: 100%;
+        height: auto;
+        padding: 0px 20px;
+
+        li {
+          width: 100%;
+          height: auto;
+          margin: 20px 0px 0px;
+          padding: 20px 0px 14px;
+          position: relative;
+
+          p {
+            margin: 10px 0px;
+          }
+
+          .articleImg {
+            width: 25%;
+            padding: 0px;
+            display: inline-block;
+
+            img {
+              width: 100%;
+              margin: 0px;
+            }
+          }
+
+          .articleCont {
+            width: 65%;
+            position: absolute;
+            left: 30%;
+            top: 17px;
+
+            .articleTitles {
+              word-wrap: break-word;
+            }
+
+            .articleConts {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+            }
+
+
+            .articleTag {
+              
+            }
+          }
+        }
+      }
+    }
+  }
+}
